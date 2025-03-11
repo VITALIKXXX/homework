@@ -45,10 +45,12 @@ body {
     display: grid;
     grid-template-columns: 2fr 1fr;
     align-items: center;
+    column-gap: 20px;
     padding: 20px;
 }
 
 .cta__button {
     background-color: black;
     color: white;
+    align-self: flex-end;
 }
