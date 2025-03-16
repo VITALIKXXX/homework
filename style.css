@@ -3,17 +3,19 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    /* зовнішня рамка на вайрфреймах - то зазвичай мається на увазі вікно браузера, тож її не потрібно виводити */
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*height: 100vh;*/
 }
 
 .container {
-    border: 4px solid black;
+    /*див. коментар на body*/
+    /*border: 4px solid black;*/
     border-radius: 5px;
-    width: 600px;
-    height: 600px;
+    /*width: 600px;*/
+    /*height: 600px;*/
 }
 
 .header {
@@ -60,11 +62,18 @@ body {
 
 .main__section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* малюємо сітку 4(колонки)х3(рядки), першу колонку робим трохи ширшою ніж решта (1.5) */
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 10px;
     padding: 20px;
     max-width: 100%;
     justify-content: center;
+}
+
+/* це для дебагу просто, щоб видно було рамки продуктів */
+.main__section > div {
+    border: 1px dashed red;
 }
 
 .product {
@@ -84,3 +93,23 @@ body {
     text-decoration: none;
     color: blue;
 }
+
+/* кажемо першому продукту зайняти весь стовпчик (від рядка 1 до -1(останнього)) */
+.product:first-child {
+    grid-row: 1/-1;
+}
+
+@media screen and (max-width: 1024px) {
+/* на менших екранах робимо іншу сітку: 3 колонки х 4 рядка, де перший рядок має півтори висоти інших */
+    .main__section {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1.5fr repeat(3, 1fr);
+    }
+
+    /* знов берем перший продукт і 1. просимо його більше не займати весь стовпчик 2. просимо зайняти весь рядок натомість */
+    .product:first-child {
+        grid-row: 1/2;
+        grid-column: 1/-1;
+    }
+}
+
