@@ -3,9 +3,7 @@
 }
 
 .container {
-    border: 4px solid black;
     border-radius: 5px;
-    overflow: auto;
 }
 
 .header {
@@ -68,4 +66,8 @@
 
 .main__section>div {
     border: 1px dashed red;
+}
+
+.product:first-child {
+    grid-row: 1/-1;
 }
