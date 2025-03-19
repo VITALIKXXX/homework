@@ -62,10 +62,6 @@
     display: block;
 }
 
-.main__section>div {
-    border: 1px dashed red;
-}
-
 .product:first-child {
     grid-row: 1/-1;
 }
