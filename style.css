@@ -10,8 +10,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 4px solid black;
-    height: 50px;
 }
 
 .menu {
@@ -70,4 +68,16 @@
 
 .product:first-child {
     grid-row: 1/-1;
+}
+
+@media screen and (max-width: 1024px) {
+    .main__section {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1.5fr repeat(3, 1fr);
+    }
+
+    .product:first-child {
+        grid-row: 1/2;
+        grid-column: 1/-1;
+    }
 }
