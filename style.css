@@ -96,12 +96,6 @@
     justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-    .main__section p {
-        display: none;
-    }
-}
-
 .main__section img {
     max-width: 100%;
     height: auto;
@@ -130,6 +124,10 @@
         align-items: flex-start;
     }
 
+    .header div {
+        margin-top: 20px;
+    }
+
     .menu a {
         padding: 10px;
     }
@@ -154,5 +152,8 @@
         gap: 5px;
     }
 
-    
+    .main__section p {
+        display: none;
+    }
+
 }
