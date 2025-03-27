@@ -70,12 +70,6 @@
     padding: 20px;
 }
 
-@media screen and (max-width: 768px) {
-    .hero__section p {
-        display: none;
-    }
-}
-
 .cta__button {
     background-color: black;
     color: white;
@@ -115,6 +109,7 @@
     .product:first-child {
         grid-row: 1/2;
         grid-column: 1/-1;
+        display: block;
     }
 }
 
